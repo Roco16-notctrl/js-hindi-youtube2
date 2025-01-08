@@ -6,16 +6,16 @@
 // const scoreValue=100.3
 
 // const isLoggedIn=false
-const outsideTemp=null
+// const outsideTemp=null
 // let userEmail=undefined
 
-const anotherid=Symbol('2133423')
+// const anotherid=Symbol('2133423')
 // const id=Symbol('2133423')
 // console.log(anotherid)
 // console.log(id)
 // console.log(id===anotherid)
 
-const bigNumber=3982373784747n
+// const bigNumber=3982373784747n
 // console.log(bigNumber)
 
 
@@ -23,22 +23,22 @@ const bigNumber=3982373784747n
 //Array,Objects,Functions
 
 
-const heros=["shaktiman","sunnyleone","doga"]
+// const heros=["shaktiman","sunnyleone","doga"]
 // console.log(heros)
-let myObj={
-    name:"hitesh",
-    age:22,
-}
-console.log(myObj.name)
-console.log(myObj.age)
+// let myObj={
+//     name:"hitesh",
+//     age:22,
+// }
+// console.log(myObj.name)
+// console.log(myObj.age)
 
 
-const myFunction=function(){
-    console.log("hello world")
-}
+// const myFunction=function(){
+//     console.log("hello world")
+// }
 
-console.log(typeof(bigNumber))
-console.log(typeof(outsideTemp))
-console.log(typeof(myObj))
-console.log(typeof(myFunction))
-console.log(typeof(anotherid))
+// console.log(typeof(bigNumber))
+// console.log(typeof(outsideTemp))
+// console.log(typeof(myObj))
+// console.log(typeof(myFunction))
+// console.log(typeof(anotherid))
