@@ -122,3 +122,8 @@
 //we can change the value of properties of an object created using const keyword but cannot change an object created using const.
 
 
+// The binding list after the var keyword allows you to declare and optinally initialize mulitple variables in statement .
+
+// The intializers (value assigned to the variables) are evaluated from left to right, and later variables can reference earlier ones in the list.
+
+
