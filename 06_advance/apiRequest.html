@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <button id="btn">click Me honey</button>
+</body>
+<script>
+    const requestUrl='https://api.github.com/users/Roco16-notctrl'
+   const xhr=new XMLHttpRequest()
+   xhr.open('GET',requestUrl)
+   xhr.onreadystatechange=function(){
+    console.log(xhr.readyState)
+    if(xhr.readyState===4){
+        const data=JSON.parse(this.responseText)
+        console.log(data)
+        console.log(data.followers) 
+    }
+   }
+   xhr.send()
+</script>
+</html> -->
+
+
+<!-- The XMLHttpRequest() constructor creates a new XMLHttpRequest -->
+
+
+<!-- syntax: new XMLHttpRequest() -->
+ <!-- parameter: none -->
+  <!-- Return value: A new XMLHttpRequest object -->
+   <!-- The object must be prepared by at least calling open() to initialize it before calling send() to send the request to the server -->
+
+
+   <!-- What is XMLHttpRequest?
+     Ans:XMLHttpRequest (XHR) is a javascript API used to make HTTP requests from a web browser to a sever.It is commonly used  to fetch data from a sever without reloading the page(e.g., in AJAX applications)
+
+     It allows you to send and receive data in various formats , such as JSON, XML or plain text.
+
+
+     const request=new XMLHttpRequest();
+     request.open('GET','https://example.com/api/data',true)
+     request.send()
+
+
+   const request=XMLHttpRequest()
+   request.open('GET',"URL",true)
+   request.send()
+
+   firefox16 introduced  a non-standard parameter to a XMLHttpRequest constructor, which enable  anonymous mode. 
+   
+   This was done by setting mozAnon flag to true in paramsDictionary object passed to the contructor.
+
+   const paramsDictionary={mozAnon:true};
+   const request=new XMLHttpRequest(paramsDictionary)
+   request.open("GET","https...........",true) 
+   request.send()
+
+
+   FireFox16 added this feature to provide a way to make requests without sending user credentials, which can be useful for privacy or security reasons.
+   for example:
+   fetching public data from a server without exposing the user's session.
+   preventing cross-site request forgery(CSRF) by not sending cookies.
+
+   It was non-standard and only supported in FireFox.
+   Modern browsers have moved away from XMLHttpRequest in favour of the fetch() API, which provide a more modern and flexible way to make HTTP requests.
+
+   If you need to make anonymouse HTTP request to the web server, you can use the fetch() API with the credentials:"omit" option:
+
+
+   fetch("https://example.com/api/data",{credentials:"omit"})
+   .then(response=>response.json())
+   .then(data=>console.log(data))
+
+
+   key Takeaways
+   firefox 16 introduced a non-standard mozAnon flag to enable anonymous mode in XMLHttpRequest
+   This feature allowed requests to be made without sending cookies or authetication headers 
+   it was never standrized and is no longer relevant in modern web developement.
+   Today, you should use  the fetch() API for making HTTP request, including anonymous ones.
+
+
+   XMLHttpRequest inherit properties from XMLHttpRequestEventTarget and EventTarget.
+
+
+ XMLHttpRequest is a javascript API used to make HTTP requests from a web browser to a server.
+
+ It provides methods like open(),send() and properties like reponseText, status,etc.
+
+ XMLHttpRequestEventTarget is an interface that defines event handlers for XMLHttpRequest.
+
+EventTarget is a more general interface that provides the foundation for handling events in the DOM(doucment object Model.)
+
+
+request.addEventListener("load",function(){
+console.log("Request completed! Response:",this.responseText)
+})
+
+//Inherited form EventTarget:Add an event listener for the "error" event
+
+request.addEventListener("error",function(){
+console.log("Reqeust failed");
+})
+
+//Inherited from XMLHttpRequestEventTarget: Use the onload property 
+request.onload=function(){
+console.log("Request completed! Response:",this.responseText)
+}
+
+reqeust.open("GET","http://exampple.com/api/data",true)
+reqeust.send()
+
+
+The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states.
+
+
+The setRequestHeader() method in XMLHttpRequest is used to customize the HTTP headers of your request.HTTP headers are key-value pair that provide additional information about the request or the client making the request.
+
+content-Type
+purpose:Tell the server what type of data is being sent in the request body.
+
+request.setRequestHeader("content-Type","application/json")
+
+content-Type
+purpose:Tell the server what type of data is being sent in the request body.
+request.setRequestHeader("content-type","application/json")
+
+request.setRequestHeader("Authorization","Bearer your-token-here")
+
+Accept Header:
+Tells the server what type of response the client can handle.
+request.setRequestHeader("Accept","application/json")
+
+Allows the server to handle requests from different origins(domains)
+reqeust.setRequestHeader("origin","http://your-website.com")
+request.setRequestheader("X-custom-Header","customValue")
+
+
+
+request.setRequestHeader("content-Type","application/json")
+this tells the server that the request body is in JSON format.
+
+
+
+request.setRequestHeader("Authorization","Bearer your-token-here")
+
+
+:-->
