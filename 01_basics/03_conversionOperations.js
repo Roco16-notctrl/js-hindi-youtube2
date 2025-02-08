@@ -128,10 +128,10 @@
 // num1=num2=num3=2+2
 // console.log(num1,num2,num3)
 
-let gamecounter=100
+// let gamecounter=100
 // gamecounter++
-++gamecounter
-console.log(gamecounter)
+// ++gamecounter
+// console.log(gamecounter)
 
 
 //x++ this increment operators increments and return the value before incrementing
@@ -141,3 +141,5 @@ console.log(gamecounter)
 // let x2=3n;
 // let y2=x2++;
 // console.log(x2 , y2)
+
+

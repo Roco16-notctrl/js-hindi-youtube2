@@ -8,6 +8,7 @@ console.log(3+3); console.log("hitesh")//code readability ki maa chud gyi vaiya 
 // number =>2 to power 53
 //bigint
 //string=>""
+//boolean=>true/false
 // undefined
 //symbol =>unique
 
