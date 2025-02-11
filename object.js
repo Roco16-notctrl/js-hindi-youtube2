@@ -1,0 +1,27 @@
+//From this example we concluded that everyting in javascript is a object.Even funtion is object in javascript .It will execute its content and also behaves a object i.e saves an additional properties and methods.
+function multipleBy5(num){
+    return num*5
+}
+
+multipleBy5.power=2
+
+console.log(multipleBy5(5))
+console.log(multipleBy5.power)
+console.log(multipleBy5.prototype)
+
+function createUser(username,score){
+    this.username=username
+    this.score=score
+}
+
+createUser.prototype.increment=function(){
+    this.score++
+}
+
+createUser.prototype.printMe=function(){
+    console.log(`score is ${this.score}`);
+}
+const chai=new createUser("chai",25)
+const tea=new createUser("tea",250)
+
+chai.printMe()
