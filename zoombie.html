@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Shooter</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        canvas {
+            display: block;
+            background: url('https://www.publicdomainpictures.net/pictures/30000/velka/plain-black-background.jpg');
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let gun = { x: canvas.width / 2, y: canvas.height - 50, width: 50, height: 20 };
+        let bullets = [];
+        let zombie = { x: Math.random() * (canvas.width - 50), y: 50, width: 50, height: 50, speed: 2 };
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft" && gun.x > 0) gun.x -= 20;
+            if (e.key === "ArrowRight" && gun.x < canvas.width - gun.width) gun.x += 20;
+            if (e.key === " ") bullets.push({ x: gun.x + 20, y: gun.y, width: 5, height: 10 });
+        });
+
+        function update() {
+            bullets.forEach((bullet, index) => {
+                bullet.y -= 5;
+                if (bullet.y < 0) bullets.splice(index, 1);
+            });
+            zombie.y += zombie.speed;
+            if (zombie.y > canvas.height) {
+                zombie.y = 50;
+                zombie.x = Math.random() * (canvas.width - 50);
+            }
+            bullets.forEach((bullet, index) => {
+                if (bullet.x < zombie.x + zombie.width && bullet.x + bullet.width > zombie.x && bullet.y < zombie.y + zombie.height && bullet.y + bullet.height > zombie.y) {
+                    bullets.splice(index, 1);
+                    zombie.y = 50;
+                    zombie.x = Math.random() * (canvas.width - 50);
+                }
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(zombie.x, zombie.y, zombie.width, zombie.height);
+            ctx.fillStyle = "white";
+            ctx.fillRect(gun.x, gun.y, gun.width, gun.height);
+            bullets.forEach(bullet => {
+                ctx.fillStyle = "yellow";
+                ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+            });
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+        gameLoop();
+    </script>
+</body>
+</html>
